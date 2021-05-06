@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   History
+{% endblock %}
+
+{% block main %}
+<form action="/history">
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Type</th>
+      <th scope="col">Date</th>
+      <th scope="col">Shares</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for trans in transactions %}
+    <tr>
+      <th scope="row">{{trans.symbol}}</th>
+      <td>{{trans.type}}</td>
+      <td>{{trans.date}}</td>
+      <td>{{trans.shares}}</td>
+      <td>{{trans.price}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<form action = "/quote" method ="POST">
+    <h1 class = "display-4">Stock Quotes</h1>
+    <h2> {{NewQuote["price"]}}</h2>
+    <p>{{NewQuote["name"]}} - {{NewQuote["symbol"]}}</p>
+</form>
+{% endblock %}
