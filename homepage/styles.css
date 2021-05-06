@@ -1,0 +1,67 @@
+ul {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #000000;
+    padding: 5px;
+    list-style-type: none;
+}
+
+ nav > li {
+     background-color:#858585;
+     text-align: center;
+     padding: 1px ;
+     font-size: 15px;
+     text-decoration: none;
+     color: #FFFFFF;
+ }
+
+ li{
+    text-align: center;
+ }
+
+ li a {
+  text-decoration: none;
+  color: #FFFFFF;
+ }
+
+ #h1index {
+     text-align: center;
+     margin-top: 12%;
+     color: black;
+
+ }
+
+ #h2index {
+     text-align: center;
+     color: black;
+ }
+
+ .indexBod {
+     background-image: url(pictures/BackgroundWeb.gif);
+
+ }
+
+ #h1About {
+  margin-top: 5%;
+  text-align: center;
+ }
+
+ #Author {
+  height: 300px;
+  width: 500px;
+  margin-left: 35%;
+ }
+
+#back {
+ margin-top: 6%;
+ text-align: center;
+}
+
+#content {
+ text-align: center;
+}
+
+#AboutBod {
+ background-image: url("pictures/AboutBack.jpg");
+
+}

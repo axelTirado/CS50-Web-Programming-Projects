@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Guess the Number</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+        h1 {
+            text-align: center;
+            margin-right: 3px;
+        }
+
+        #txtGuess {
+            margin-left: 43.5%;
+            margin-top: 10%;
+        }
+
+        #btnEnter {
+            margin-left: 45%;
+        }
+
+        #back {
+            margin-top: 5%;
+            margin-left:47%;
+        }
+
+        #answer {
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        img {
+            height: 200px;
+            width: 300px;
+            margin-left: 40%;
+            margin-top: 4% ;
+        }
+
+        body {
+            background-image: url("NumPic/GuessGameBg.jpg");
+        }
+        </style>
+    </head>
+    <body>
+       <h1 id = "lblIntro"> Guess a number:</h1>
+       <div>
+           <input id = txtGuess type ="text">
+       </div>
+       <div>
+           <button id = "btnEnter" class="btn btn-info" onclick = "get_number()" >Sumbit Number</button>
+       </div>
+       <div>
+           <p id ="answer"></p>
+       </div>
+       <div>
+           <img id = "imgResult" src="Lightbulb/LightOffWallpaper.jpg">
+       </div>
+
+       <div>
+           <p id ="back"><a href = "index.html">Go Back</a></p>
+       </div>
+       <script>
+
+               var rand = Math.floor(Math.random() * 10) + 1;
+
+               var counter = 0;
+
+               function get_number(){
+
+                   var n = document.getElementById("txtGuess").value;
+
+                   var pic;
+
+                    if (n < rand) {
+                        document.getElementById("answer").innerHTML = "Too low, guess again.";
+                        document.getElementById("txtGuess").value = "";
+                        pic = "NumPic/TooLow.gif";
+                        counter = counter + 1;
+                    }
+                    else if (n > rand) {
+                        document.getElementById("answer").innerHTML = "Too High, guess again. ";
+                        document.getElementById("txtGuess").value = "";
+                        pic = "NumPic/TooHigh.gif";
+                        counter = counter + 1;
+                   }
+                    else if (n == rand) {
+                        document.getElementById("answer").innerHTML = "You are Correct, it took you " + counter + " tries."
+                        pic = "NumPic/Correct.jpg";
+                   }
+
+                   document.getElementById("imgResult").src = pic;
+               }
+       </script>
+
+    </body>
+</html>

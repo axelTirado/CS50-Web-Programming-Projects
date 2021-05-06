@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Rock, Paper, Scissors</title>
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+         <style>
+
+         #lblPlayer {
+             text-align: center;
+             margin-top: 5%;
+             margin-right: 2%;
+         }
+
+         #btnSubmit {
+             margin-left:42%;
+         }
+
+         #txtPlay{
+             margin-left:43%;
+         }
+
+         #buttons {
+             margin-top: 3%;
+         }
+
+         #sanaty{
+             margin-top: 3%;
+             text-align: center;
+         }
+
+         #back {
+             margin-top: 5%;
+             text-align: center;
+         }
+
+         img {
+             height:200px;
+             width:300px;
+             margin-top: 6%;
+             margin-left: 39%;
+         }
+
+         </style>
+    </head>
+    <body>
+        <div>
+        <p id = lblPlayer> </p>
+        <input id ="txtPlay" type="text">
+        </div>
+        <div id ="buttons">
+            <button id="btnSubmit" class="btn btn-success" onclick="input2()"> Submit Play</button>
+            <button id="btnSubmit2" class="btn btn-info" onclick="playing(arrInput[0],arrInput[1]);"> Get Results</button>
+        </div>
+        <p id = "sanaty"></p>
+        <div>
+            <img id = "imgGamePlay" src = "Lightbulb/LightOffWallpaper.jpg">
+        </div>
+        <div>
+            <p id ="back"><a href = "introRPS.html">Go Back</a></p>
+        </div>
+
+
+        <script>
+            var player1 = prompt("Player1 Enter Name.");
+            var player2 = prompt("Player2 Enter Name.");
+
+            document.getElementById("lblPlayer").innerHTML = player1 + ", Choose your play:";
+
+            var arrInput = [];
+
+
+            function input2(){
+                if (document.getElementById("lblPlayer").innerHTML == player1 + ", Choose your play:") {
+                    var player1input = document.getElementById("txtPlay").value;
+
+                    arrInput.push(player1input);
+
+                    document.getElementById("txtPlay").value = "";
+
+                    document.getElementById("lblPlayer").innerHTML = player2 + ", Choose your play:";
+                }
+                else if (document.getElementById("lblPlayer").innerHTML == player2 + ", Choose your play:"){
+                    var player2input = document.getElementById("txtPlay").value;
+
+                    arrInput.push(player2input);
+
+                    document.getElementById("txtPlay").value = "";
+
+                    document.getElementById("lblPlayer").innerHTML = "Both plays are loading ...";
+
+                }
+
+            }
+
+            function playing(input1, input2){
+
+                var pic;
+
+                if (input1 == input2 ){
+                    document.getElementById("sanaty").innerHTML = "It is a Tie!";
+                    pic = "RPSpic/RPSTie.gif";
+                }
+
+                else if (input1 == "rock"){
+                    if (input2 == "paper"){
+                        document.getElementById("sanaty").innerHTML = player2 + " is the Winner!";
+                        pic = "RPSpic/PaperBeatsRock.gif";
+                    }
+                    else {
+                        document.getElementById("sanaty").innerHTML = player1 + " is the Winner!";
+                        pic = "RPSpic/RockBeatsScissor.jpg";
+                    }
+                }
+
+                else if (input1 == "paper") {
+                    if (input2 == "scissor"){
+                        document.getElementById("sanaty").innerHTML = player2 + " is the Winner!";
+                        pic = "RPSpic/ScissorBeatsPaper.gif";
+                    }
+                    else{
+                        document.getElementById("sanaty").innerHTML = player1 + " is the Winner!";
+                        pic = "RPSpic/PaperBeatsRock.gif";
+                    }
+                }
+
+                else if (input1 == "scissor"){
+                    if (input2 == "rock"){
+                        document.getElementById("sanaty").innerHTML = player2 + " is the Winner!";
+                        pic = "RPSpic/RockBeatsScissor.jpg";
+                    }
+                    else {
+                        document.getElementById("sanaty").innerHTML = player1 + " is the Winner!";
+                        pic = "RPSpic/ScissorBeatsPaper.gif";
+                    }
+                }
+
+                document.getElementById("imgGamePlay").src = pic;
+
+            }
+        </script>
+    </body>
+</html>

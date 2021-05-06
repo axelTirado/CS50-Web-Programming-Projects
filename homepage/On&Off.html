@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> On & Off </title>
+         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+       <style>
+       img {
+           margin-left: 35%;
+           margin-top: 3%;
+       }
+
+       #LOn {
+           margin-left: 42%;
+
+       }
+
+       #LOff {
+        margin-left: 10%;
+       }
+
+       #back {
+           margin-top: 5%;
+           margin-left: 45.5%;
+       }
+
+       </style>
+    </head>
+    <body>
+        <img id = "Lbulb" src= "Lightbulb/Off.png">
+        <script>
+            function light(sw){
+                var pic;
+                if (sw == 0){
+                    pic = "Lightbulb/Off.png";
+                    document.body.style.backgroundImage = "url('Lightbulb/LightOffWallpaper')"
+                } else {
+                    pic = "Lightbulb/On.png";
+                    document.body.style.backgroundImage = "url('Lightbulb/lightOnWallpaper.jpg')";
+                }
+
+                document.getElementById("Lbulb").src = pic;
+            }
+        </script>
+        <div>
+            <button id="LOn" type="button" width = "70" height="50" class="btn btn-warning" onclick = "light(1)">Turn On</button>
+            <button in="LOff" type="button" width = "70" height ="50"class="btn btn-secondary" onclick="light(0)">Turn Off</button>
+        </div>
+        <div>
+          <p id ="back"><a href = "index.html">Go Back</a></p>
+        </div>
+    </body>
+</html>
